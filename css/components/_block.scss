@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.block {
+  @extend %wrap;
+  @include mix.mobile-l-styles {
+    width: 70%;
+  }
+
+  .inner {
+    display: flex;
+    @include mix.tablet-styles {
+      flex-direction: column;
+    }
+
+    .img-content1 {
+      background-image: url("../images/coast.jpg");
+    }
+    .img-content2 {
+      background-image: url("../images/island.jpg");
+    }
+    .img-content3 {
+      background-image: url("../images/mountain.jpg");
+    }
+    .img-content4 {
+      background-image: url("../images/balloon.jpg");
+    }
+
+    .fixed-bg {
+      min-height: 300px;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include mix.tablet-styles {
+        min-height: 400px;
+      }
+      @include mix.mobile-l-styles {
+        min-height: 500px;
+      }
+    }
+
+    .img40 {
+      flex-basis: 40%;
+      margin-right: var.$gutter-base;
+      @include mix.tablet-styles {
+        margin-right: 0;
+        margin-bottom: var.$gutter-base;
+      }
+    }
+    .img60 {
+      flex-basis: 60%;
+    }
+  }
+  &.reverse {
+    .inner {
+      flex-direction: row-reverse;
+      margin-top: var.$gutter-base;
+      @include mix.tablet-styles {
+        flex-direction: column-reverse;
+      }
+    }
+    .img40 {
+      margin-left: var.$gutter-base;
+      margin-right: 0;
+      @include mix.tablet-styles {
+        margin-left: 0;
+        margin-top: var.$gutter-base;
+      }
+    }
+  }
+}

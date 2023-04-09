@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.intro {
+  background-image: linear-gradient(
+      rgba(155, 155, 155, 0.5),
+      rgba(155, 155, 155, 0.5)
+    ),
+    url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var.$text-color-base;
+
+  .inner {
+    @extend %wrap;
+  }
+
+  .logo {
+    a {
+      font-weight: var.$font-weight-bolder;
+    }
+    @include mix.tablet-styles {
+      font-size: var.$font-size-medium;
+    }
+    @include mix.mobile-l-styles {
+      font-size: var.$heading-size-small;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+    padding-top: math.div(var.$gutter-base, 2);
+    padding-bottom: math.div(var.$gutter-base, 2);
+
+    @include mix.mobile-l-styles {
+      flex-direction: column;
+      text-align: center;
+      align-content: center;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        @include mix.mobile-l-styles {
+          font-size: (var.$font-size-medium * 1.2);
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: math.div(var.$gutter-base, 3);
+        @include mix.mobile-l-styles {
+          margin-right: var.$gutter-base;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var.$text-color-base;
+    }
+  }
+
+  .text-box {
+    height: calc(100vh - 54px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include mix.mobile-l-styles {
+      height: calc(100vh - 104.39px);
+      p {
+        font-size: var.$heading-size-big;
+      }
+
+      .btn {
+        width: 60%;
+        font-size: var.$heading-size-tiny;
+      }
+    }
+
+    h1 {
+      font-size: var.$heading-size-big;
+      margin-bottom: 0px;
+      @include mix.mobile-l-styles {
+        font-size: var.$heading-size-bigger;
+      }
+    }
+  }
+}

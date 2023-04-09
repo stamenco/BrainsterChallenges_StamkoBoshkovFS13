@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.our-work {
+  @extend %section;
+  background-color: var.$text-color-base;
+}

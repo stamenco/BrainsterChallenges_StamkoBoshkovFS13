@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+.heading-description {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: (var.$gutter-base * 3);
+
+  .inner {
+    width: 50%;
+    margin: 0 auto;
+  }
+  p {
+    line-height: 2;
+  }
+
+  hr {
+    border-color: var.$color-blue;
+    width: 100px;
+  }
+}

@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+// h1 {}
+
+// h2 {}
+
+// h3 {}
+
+// p {}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: math.div(var.$gutter-base, 2) math.div(var.$gutter-base, 1);
+  text-transform: uppercase;
+  background-color: rgb(37, 144, 229);
+  color: white;
+  font-weight: var.$font-weight-bold;
+  border: none;
+  border-radius: 5px;
+}
