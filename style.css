@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+/* lightgrey sections - rgb(246, 246, 246)
+dark buttons - rgb(48, 47, 47)
+red box - rgb(255, 84, 68)
+purple box - rgb(170, 45, 182)
+cyan box - rgb(30, 194, 164)
+blue box - rgb(39, 139, 224)
+box-shadow color - 0px 1px 5px 1px rgba(50, 50, 50, .3)
+
+buttons hover color - rgb(45, 45, 45)
+social sections color - #464646
+ */
+
+body {
+  margin: 0;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+img {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 90%;
+  /* margin: 0 auto; */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.logo {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+header {
+  margin: 5px 0px;
+  padding: 20px 0px 10px 0px;
+}
+
+header ul,
+.demo-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+header ul li:not(:last-child),
+.demo-section ul li:not(:last-child) {
+  margin-right: 15px;
+}
+header ul li a,
+.demo-section ul li a {
+  color: black;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 60px;
+  text-align: center;
+  transition: all ease-in-out 0.4s;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+  z-index: 1;
+}
+
+.subMenu {
+  padding-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  transition-delay: 0s;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 0;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgb(48, 47, 47);
+  padding: 12px 20px;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner {
+  height: calc(100vh - 67px);
+  background-color: rgb(246, 246, 246);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .wrapper {
+  width: 60%;
+}
+
+.banner p {
+  margin-bottom: 45px;
+}
+
+.boxes-container .wrapper {
+  width: 80%;
+  display: flex;
+  text-align: center;
+}
+
+.boxes-container p {
+  font-size: 12px;
+}
+
+.boxes-container h2,
+.features h2 {
+  font-weight: 400;
+  font-size: 32px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.box {
+  flex-basis: 25%;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+  padding: 20px 40px;
+  text-transform: uppercase;
+}
+
+.box:not(:last-child) {
+  margin-right: 30px;
+}
+
+.redBox {
+  background-color: rgb(255, 84, 68);
+}
+
+.purpleBox {
+  background-color: rgb(170, 45, 182);
+}
+
+.cyanBox {
+  background-color: rgb(30, 194, 164);
+}
+
+.blueBox {
+  background-color: rgb(39, 139, 224);
+}
+
+.demo-section {
+  background-color: rgb(246, 246, 246);
+  text-align: center;
+}
+
+.demo-section h2 {
+  text-transform: uppercase;
+}
+
+.demo-section ul li a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 3px;
+  background-color: rgb(230, 225, 225);
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+}
+.demo-section ul li a:hover,
+.demo-section ul li a.active {
+  color: white;
+  background-color: rgb(45, 45, 45);
+  border-radius: 0;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+}
+.active {
+  color: white;
+  background-color: rgb(45, 45, 45);
+  border-radius: 0;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+}
+
+.demo-section .wrapper {
+  width: 70%;
+}
+
+.box-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+}
+
+.box-item-wrapper {
+  flex-basis: 33.33%;
+}
+
+.img-box {
+  margin-right: 15px;
+  margin-top: 15px;
+  box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+}
+
+.img-box:hover {
+  border: 1px solid black;
+}
+
+.img-box h3 {
+  background-color: white;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.features {
+  text-align: center;
+}
+
+.itemsOptions {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.group {
+  flex-basis: 33.33%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.group ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.group li {
+  padding-top: 15px;
+}
+
+.group ul li {
+  display: flex;
+}
+
+.group img {
+  width: 20px;
+  margin-right: 15px;
+}
+
+.social {
+  background-color: #464646;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.social a {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 15px;
+  color: white;
+}
+
+.social a:hover {
+  color: rgb(45, 45, 45);
+}
+
+footer {
+  background-color: black;
+  padding: 15px 25px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+@media (max-width: 425px) {
+  header nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .boxes-container .wrapper {
+    width: 60%;
+    display: block;
+    text-align: center;
+  }
+
+  .box-grid {
+    margin-right: 0px;
+  }
+
+  .box:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+
+  .demo-section .wrapper {
+    width: 70%;
+  }
+
+  .demo-section h2 {
+    font-size: 32px;
+  }
+
+  .demo-section ul li a {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .box-grid {
+    display: block;
+    margin-right: 0;
+    padding: 30px 0;
+  }
+
+  .img-box {
+    margin-right: 0;
+  }
+
+  .img-box h3 {
+    font-size: 12px;
+  }
+
+  .features.wrapper {
+    width: 80%;
+  }
+
+  .features p {
+    text-align: left;
+  }
+
+  .features h2 {
+    font-weight: 700;
+    font-size: 28px;
+    padding-bottom: 10px;
+  }
+
+  .itemsOptions .group:last-child {
+    display: none;
+  }
+
+  .group {
+    flex-basis: 50%;
+    margin-top: 30px;
+    padding: 0px 10px;
+    line-height: 32px;
+  }
+
+  footer {
+    padding: 15px 15px;
+  }
+
+  footer p {
+    font-size: 9px;
+  }
+}
