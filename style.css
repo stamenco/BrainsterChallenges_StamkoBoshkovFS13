@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  color: white;
+  background-color: rgba(39, 40, 51, 1);
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+.colorDarkBlue {
+  background-color: rgba(39, 40, 51, 1);
+}
+
+.colorDarkBlueOpacity {
+  background-color: rgba(39, 40, 51, 0.85);
+}
+
+.colorRed {
+  background-color: #e44c65;
+}
+
+.colorBlue {
+  background-color: rgb(93, 93, 238);
+}
+
+.colorGreen {
+  background-color: rgb(45, 212, 81);
+}
+
+.colorLightWhite {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  position: relative;
+  min-height: 100vh;
+}
+.headerText {
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header i {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+}
+
+.leftFloat {
+  float: left;
+}
+
+.rightFloat {
+  float: right;
+}
+
+nav {
+  margin: 15px 15px;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+li a {
+  display: block;
+  text-align: center;
+  padding: 8px 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.rightFloat li:last-child {
+  background-color: red;
+  border-radius: 5px;
+}
+
+nav:after {
+  content: "";
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.textContainer {
+  text-align: justify;
+}
+
+.textContainerHeader {
+  text-align: left;
+}
+
+.parallax {
+  /* The image used */
+  /* background-image: url("./images/picture1.jpg"); */
+
+  /* Set a specific height */
+  min-height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax1 {
+  background-image: url("./images/picture1.jpg");
+  filter: brightness(80%);
+}
+
+.firstPicture {
+  position: relative;
+}
+
+.parallax2 {
+  background-image: url("./images/picture2.jpeg");
+  filter: brightness(70%);
+}
+
+.secondPicture {
+  position: relative;
+}
+
+.parallax3 {
+  background-image: url("./images/picture3.jpg");
+  filter: brightness(60%);
+}
+
+.thirdPicture {
+  position: relative;
+}
+
+.firstPictureTextLocation {
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  border-top: 5px solid #e44c65;
+}
+
+.secondPictureTextLocation {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  right: 0%;
+  border-left: 5px solid rgb(93, 93, 238);
+}
+
+.thirdPictureTextLocation {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  left: 0%;
+  border-right: 5px solid rgb(45, 212, 81);
+}
+
+.textBox {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.textBox1 {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 2px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.textBox1 button:hover {
+  border: 1px solid aqua;
+  cursor: pointer;
+}
+
+.moreAboutContainer {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+.col {
+  width: 33.33%;
+  float: left;
+  padding: 30px;
+  margin-top: 30px;
+}
+.row::after {
+  content: "";
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.circle {
+  display: inline-block;
+  padding: 20px;
+  /* width: 30px;
+  height: 30px; */
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+hr {
+  border: 3px solid #e44c65;
+  margin-top: 30px;
+  width: 30%;
+}
+
+.subscribe {
+  padding: 50px;
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+form input {
+  display: inline-block;
+  width: 50%;
+  padding: 8px 10px;
+  background-color: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  outline: none;
+}
+form input:focus {
+  border-color: purple;
+}
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: white;
+}
+::-ms-input-placeholder {
+  color: white;
+}
+
+form button {
+  width: 20%;
+  background-color: white;
+  color: red;
+  padding: 8px 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+.social {
+  padding: 40px;
+  text-align: center;
+}
+
+.social a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.social p {
+  font-size: 14px;
+}
