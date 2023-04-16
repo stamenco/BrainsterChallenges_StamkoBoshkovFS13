@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  background-color: rgb(99, 140, 170);
+  /* font-family: sans-serif; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+.bg-1 {
+  background-color: rgb(219, 219, 219);
+}
+
+.bg-2 {
+  background-color: rgb(188, 185, 170);
+}
+.bg-3 {
+  background-color: rgb(156, 224, 209);
+}
+
+.bg-4 {
+  background-color: rgb(154, 167, 184);
+}
+
+.bg-5 {
+  background-color: rgb(240, 158, 132);
+}
+
+.logo {
+  /* display: inline-block; */
+  width: 30px;
+  margin-left: 10%;
+}
+
+.navbar {
+  overflow: hidden;
+  padding-right: 3%;
+  float: right;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.navbar a:hover {
+  color: rgb(181, 174, 174);
+}
+
+.headerImg {
+  padding: 20px;
+}
+
+.headerImg img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+p {
+  margin: 0;
+  color: white;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.imgBox {
+  padding: 15px;
+  width: 25%;
+  float: left;
+  text-align: center;
+  /* color: black;
+  font-weight: bold; */
+}
+
+.imgBox i {
+  margin-bottom: 10px;
+}
+
+.imgBoxInfo {
+  padding: 15px;
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  /* color: black;
+  font-weight: bold; */
+}
+
+.descriptionImgBox {
+  padding: 15px;
+  width: 50%;
+  float: left;
+  text-align: center;
+  /* color: black;
+  font-weight: bold; */
+  background-color: rgb(183, 206, 214);
+}
+
+.descriptionImgBox img {
+  max-width: 35%;
+}
+.descriptionTextBox {
+  width: 50%;
+  color: white;
+  float: left;
+  /* font-size: 12px; */
+  text-align: justify;
+  text-indent: 20px;
+  padding: 15px;
+}
+
+.social {
+  padding: 40px;
+  text-align: center;
+}
+
+.social a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 80px;
+  color: white;
+}
+
+.aboutApple p {
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+footer p {
+  background-color: rgb(81, 67, 84);
+  text-align: center;
+  padding: 20px;
+}
+
+/* ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+li {
+  width: 25%;
+  display: inline;
+  border: 1px solid black;
+} */
