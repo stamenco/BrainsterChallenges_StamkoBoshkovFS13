@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.inner {
+  @extend %wrap;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+    @include mix.tablet-styles {
+      display: inline-block;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .logo {
+    display: block;
+    font-size: var.$gutter-base;
+    text-transform: uppercase;
+    padding-bottom: var.$gutter-base;
+    @include mix.tablet-styles {
+      padding: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: math.div(var.$gutter-base, 3);
+    }
+
+    @include mix.tablet-styles {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var.$text-color-base;
+    text-transform: capitalize;
+  }
+
+  span {
+    font-weight: var.$font-weight-bold;
+  }
+}
+
+.burger-menu {
+  display: none;
+  i {
+    color: var.$text-color-base;
+    font-size: var.$gutter-base;
+    line-height: var.$line-height-base;
+    padding: 0 3px;
+    border: 1px solid var.$text-color-base;
+  }
+  @include mix.tablet-styles {
+    display: block;
+  }
+}
+
+@include mix.tablet-styles {
+  .menuFooter {
+    display: none;
+  }
+
+  .menuHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+}
