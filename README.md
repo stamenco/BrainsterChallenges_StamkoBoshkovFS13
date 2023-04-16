@@ -1,5 +1,13 @@
 # BrainsterChallenges_StamkoBoshkovFS13
 
+I am Stamko Boshkov, student at Brainster - Full-Stack Academy - Group 13
+
+This is my Repository created for Brainster Challanges
+
+Every challange will be in different branch.
+
+Regards, Stamko
+
 
 
 ## Getting started
