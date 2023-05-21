@@ -1,0 +1,77 @@
+img {
+  max-width: 100%;
+}
+
+.vh-75 {
+  max-height: 75vh;
+}
+
+.bg-modal {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/media.jpg);
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-darkgray {
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.mg-minus {
+  margin-top: -75px;
+}
+
+.active-border:focus {
+  border-left: 1px solid white !important;
+  font-weight: 400;
+}
+
+.nav-item .active {
+  border-left: 1px solid white !important;
+  font-weight: 400;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: transparent;
+}
+
+.carousel-indicators .active {
+  background-color: white !important;
+}
+
+.carousel-caption {
+  bottom: auto !important;
+  top: 20%;
+}
+
+.section-three {
+  height: 25vh;
+  background-image: url(./images/lights.jpg);
+  background-position: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  background-image: url(./images/image1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 75vh;
+}
+
+.contact-form .btn:hover {
+  background-color: red !important;
+  color: white !important;
+}
+
+.hr-style {
+  border-top: 2px solid rgba(0, 0, 0, 0.2) !important;
+}
