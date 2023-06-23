@@ -1,0 +1,302 @@
+CREATE TABLE movie (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(32),
+    premiere DATE,
+    genre VARCHAR(32),
+    country VARCHAR(32),
+    production VARCHAR(32)
+);
+
+CREATE TABLE films (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    premiere_city VARCHAR(32),
+    ernings INT,
+    premiere_format VARCHAR(3),
+    movie_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (movie_id) REFERENCES movie(id)
+);
+
+CREATE TABLE sequel (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    sequel_name VARCHAR(32),
+    film_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (film_id) REFERENCES films(id)
+);
+
+CREATE TABLE actor (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(32),
+    lastname VARCHAR(32),
+    nickname VARCHAR(32),
+    birth_date DATE,
+    agent_code INT UNSIGNED
+);
+
+CREATE TABLE critics (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(32),
+    lastname VARCHAR(32),
+    username VARCHAR(32) UNIQUE,
+    `password` VARCHAR(32)
+);
+
+CREATE TABLE directors (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(32),
+    lastname VARCHAR(32),
+    expertese VARCHAR(250),
+    genre VARCHAR(32)
+);
+
+CREATE TABLE tv_series (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    channel_name VARCHAR(32),
+    episode_number INT UNSIGNED,
+    seasons_number TINYINT UNSIGNED,
+    movie_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (movie_id) REFERENCES movie (id)
+);
+
+CREATE TABLE actor_series (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    actor_id INT UNSIGNED,
+    series_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (actor_id) REFERENCES actor (id),
+    CONSTRAINT FOREIGN KEY (series_id) REFERENCES tv_series (id)
+);
+
+CREATE TABLE perfomed_by (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ernings INT,
+    actor_id INT UNSIGNED,
+    movie_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (movie_id) REFERENCES movie (id),
+    CONSTRAINT FOREIGN KEY (actor_id) REFERENCES actor (id)
+);
+
+CREATE TABLE oscar (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    win_year int(4),
+    role VARCHAR(32),
+    actor_id INT UNSIGNED,
+    film_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (film_id) REFERENCES films (id),
+    CONSTRAINT FOREIGN KEY (actor_id) REFERENCES actor (id)
+);
+
+CREATE TABLE actor_film (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    actor_id INT UNSIGNED,
+    film_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (film_id) REFERENCES films (id),
+    CONSTRAINT FOREIGN KEY (actor_id) REFERENCES actor (id)
+);
+
+CREATE TABLE critic_film (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    rating FLOAT,
+    critic_id INT UNSIGNED,
+    film_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (film_id) REFERENCES films (id),
+    CONSTRAINT FOREIGN KEY (critic_id) REFERENCES critics (id)
+);
+
+CREATE TABLE actor_critic (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    expression FLOAT,
+    naturalness FLOAT,
+    devotion FLOAT,
+    critic_id INT UNSIGNED,
+    actor_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (actor_id) REFERENCES actor (id),
+    CONSTRAINT FOREIGN KEY (critic_id) REFERENCES critics (id)
+);
+
+CREATE TABLE directed_by (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    salary INT,
+    film_id INT UNSIGNED,
+    director_id INT UNSIGNED,
+    CONSTRAINT FOREIGN KEY (director_id) REFERENCES directors (id),
+    CONSTRAINT FOREIGN KEY (film_id) REFERENCES films (id)
+);
+
+INSERT INTO movie (name, premiere, genre, country, production)
+VALUES 
+('Inception', '2010-12-03', 'Mistery', 'US', 'Warner Bros'),
+('Shutter Island', '2010-02-13', 'Mistery', 'US', 'Warner Bros'),
+('Loard of the Rings - I', '2001-12-10', 'Fantasy', 'US', 'Wingnut Films'),
+('Loard of the Rings - II', '2003-12-10', 'Fantasy', 'US', 'Wingnut Films'),
+('Loard of the Rings - III', '2004-12-10', 'Fantasy', 'US', 'Wingnut Films'),
+('Game of Thrones - 1', '2018-04-01', 'Mistery', 'UK', 'HBO'),
+('Game of Thrones - 2', '2019-05-15', 'Mistery', 'UK', 'HBO'),
+('Game of Thrones - 3', '2013-03-23', 'Mistery', 'UK', 'HBO'),
+('Bad Boys - 1', '2011-04-01', 'Action', 'US', 'Sony'),
+('Bad Boys - 2', '2009-03-08', 'Action', 'US', 'Sony');
+
+INSERT INTO actor (firstname, lastname, nickname, birth_date, agent_code)
+VALUES
+    ('Leonardo', 'Dicaprio', 'LD', '1990-05-15', 1001),
+('Mel', 'Gibson', 'MG', '1985-12-10', 1002),
+('Orlando', 'Bloom', 'OB', '1988-08-25', 1003),
+('Sean', 'Bean', 'SB', '1992-03-02', 1004),
+('Aaron', 'Paul', 'AP', '1991-07-19', 1005),
+('Anna', 'Gun', 'AG', '1989-11-08', 1001),
+('Emilia', 'Clarke', 'EC', '1993-09-12', 1003),
+('Peter', 'Dinklage', 'PD', '1987-04-30', 1002),
+('Cristopher', 'Harlington', 'CH', '1990-01-22', 1005),
+('Margaret', 'Williams', 'MW', '1986-06-28', 1004);
+
+INSERT INTO directors (firstname, lastname, expertese, genre) VALUES
+    ('John', 'Doe', 'Action', 'Thriller'),
+    ('Jane', 'Smith', 'Drama', 'Romance'),
+    ('Michael', 'Johnson', 'Comedy', 'Family'),
+    ('Sarah', 'Williams', 'Horror', 'Mystery'),
+    ('David', 'Brown', 'Sci-Fi', 'Fantasy');
+
+INSERT INTO tv_series (channel_name, episode_number, seasons_number, movie_id)
+VALUES 
+('HBO', 10, 7, 6),
+('HBO', 10, 7, 7),
+('HBO', 10, 7, 8),
+('AMC', 7, 5, 9),
+('AMC', 11, 5, 10);
+
+INSERT INTO films (premiere_city, ernings, premiere_format, movie_id)
+VALUES 
+('Los Angeles', 830000000, '2D', 1),
+('Las Vegas', 14350000, '2D', 2),
+('Berlin', 87150000, '3D', 3),
+('Chicago', 941000000, '3D', 4),
+('detroit', 320000000, '3D', 5);
+
+INSERT INTO critics (firstname, lastname, username, `password`)
+VALUES 
+('Alissa', 'Wilkinson', 'alissaw', 'password123'),
+('David', 'Cox', 'dcox', 'pas123'),
+('Caroline', 'Framke', 'framke', 'pass1212'),
+('Scott', 'Meslow', 'theScott', 'lozinka'),
+('Noble', 'Smith', 'NobleS', 'lozinkat');
+
+INSERT INTO sequel (sequel_name, film_id)
+VALUES 
+('Tenet', 1),
+('Black Swan', 2),
+('The Hobbit: An Unexpected', 3),
+('The Hobbit: The Desolation', 4),
+('The Hobbit: 3', 5);
+
+INSERT INTO actor_critic (expression, naturalness, devotion, critic_id, actor_id)
+VALUES 
+(8, 9, 10, 3, 3),
+(10, 10, 10, 5, 3),
+(7, 8, 8, 1, 2),
+(10, 9, 10, 4, 1),
+(9, 9, 10, 2, 2);
+
+INSERT INTO critic_film (rating, critic_id, film_id)
+VALUES 
+(8.8, 5, 1),
+(9.5, 1, 3),
+(9.1, 4, 2),
+(6, 2, 4),
+(7.4, 3, 5);
+
+INSERT INTO actor_film (actor_id, film_id)
+VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(8, 5);
+
+INSERT INTO actor_series (actor_id, series_id)
+VALUES 
+(4, 1),
+(9, 2),
+(7, 3),
+(5, 4),
+(6, 5);
+
+INSERT INTO directed_by (salary, film_id, director_id)
+VALUES 
+(512000, 4, 1), 
+(6654000, 5, 2), 
+(4453000, 1, 3), 
+(4785000, 2, 4), 
+(346000, 3, 5);
+
+INSERT INTO oscar (win_year, role, actor_id, film_id)
+VALUES 
+('2023', 'Cob', 1, 1),
+('2013', 'Teddy Daniels', 2, 2),
+('2009', 'Lead Actor', 3, 3),
+('2014', 'Lead Actor', 3, 4),
+('2020', 'Lead Actor', 3, 4);
+
+INSERT INTO perfomed_by (ernings, actor_id, movie_id)
+VALUES 
+(5000, 1, 1),
+(15000, 2, 2),
+(47000, 3, 3),
+(354000, 3, 4),
+(9000, 4, 5),
+(29000, 8, 6),
+(48000, 9, 7),
+(500000, 5, 8),
+(500000, 4, 9),
+(500000, 7, 10);
+
+
+----------- 3pt ------------------
+
+SELECT movie.name, movie.premiere, movie.genre, movie.country, movie.production, COUNT(actor.id) as 'Number of Actors'
+FROM movie INNER JOIN perfomed_by ON perfomed_by.movie_id = movie.id
+           INNER JOIN actor ON actor.id = perfomed_by.actor_id
+GROUP BY movie.id;
+
+SELECT actor.firstname, actor.lastname, actor.nickname, actor.birth_date, actor.agent_code, COUNT(movie.id) as 'No. Acted Movies'
+FROM  actor INNER JOIN perfomed_by ON actor.id = perfomed_by.actor_id
+			INNER JOIN movie ON movie.id = perfomed_by.movie_id
+GROUP BY actor.id;
+
+SELECT films.premiere_city, films.ernings, films.premiere_format
+FROM films
+ORDER BY films.premiere_format ASC;
+
+SELECT actor.*, movie.name as 'Name od Movie', oscar.role, oscar.win_year
+FROM actor INNER JOIN oscar ON actor.id = oscar.actor_id
+		   INNER JOIN films ON films.id = oscar.film_id
+           INNER JOIN movie ON movie.id = films.movie_id
+ORDER BY oscar.win_year DESC;
+
+----------- 5pt ------------------
+
+SELECT movie.name as 'Movie Name', films.premiere_city, films.ernings, films.premiere_format, CONCAT(actor.firstname, ' ', actor.lastname) as Actor, CONCAT(directors.firstname, ' ', directors.lastname) as Director 
+FROM films INNER JOIN directed_by ON directed_by.film_id = films.id
+           INNER JOIN directors ON directors.id = directed_by.director_id
+           INNER JOIN actor_film ON actor_film.film_id = films.id
+           INNER JOIN actor ON actor.id = actor_film.actor_id
+           INNER JOIN movie ON movie.id = films.movie_id
+ORDER BY Director ASC;
+
+SELECT actor.*, ROUND((expression+naturalness+devotion)/3,1) as grade
+FROM actor INNER JOIN actor_critic ON actor.id = actor_critic.actor_id
+WHERE ((expression+naturalness+devotion)/3) < (SELECT AVG((expression+naturalness+devotion)/3)
+                    FROM actor_critic)
+ORDER BY grade DESC;
+
+SELECT actor.firstname, actor.lastname, actor.nickname, (YEAR(CURRENT_DATE())-YEAR(actor.birth_date)) as Age, actor.agent_code
+FROM actor INNER JOIN oscar ON actor.id = oscar.actor_id
+GROUP BY actor.id
+HAVING Age > (SELECT AVG(YEAR(CURRENT_DATE()) - YEAR(birth_date))
+              FROM actor
+				);
+
+
+
+
+
+
+
+
