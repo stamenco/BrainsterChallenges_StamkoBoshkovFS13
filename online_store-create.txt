@@ -1,0 +1,115 @@
+CREATE TABLE administrator (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(32) DEFAULT NULL,
+  `password` int(10) UNSIGNED DEFAULT NULL
+);
+
+CREATE TABLE buyer (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name varchar(32) DEFAULT NULL,
+  surname varchar(32) DEFAULT NULL,
+  address varchar(32) NOT NULL
+);
+
+CREATE TABLE confectionery (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE cosmetics (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE drinks (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL,
+  alcoholic tinyint(1) DEFAULT NULL,
+  carbonated tinyint(1) DEFAULT NULL,
+  `alc_lvl` decimal(3,1) UNSIGNED DEFAULT NULL
+);
+
+CREATE TABLE foods (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE household_items (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL,
+  cleaning_agent tinyint(1) DEFAULT NULL,
+  kitchen_utensil tinyint(1) DEFAULT NULL
+); 
+
+CREATE TABLE milk_and_dairy (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE modify_add_delete (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  admin_id INT UNSIGNED DEFAULT NULL,
+  product_id INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE orders (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  admin_id INT UNSIGNED DEFAULT NULL,
+  admin_approved_time datetime DEFAULT NULL,
+  supplier_id INT UNSIGNED DEFAULT NULL,
+  delivered tinyint(1) DEFAULT NULL
+); 
+
+CREATE TABLE orders_completed (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  order_id INT UNSIGNED DEFAULT NULL,
+  supplier_id INT UNSIGNED DEFAULT NULL,
+  supplier_rating tinyint(4) DEFAULT NULL,
+  supplier_comment varchar(512) DEFAULT NULL,
+  buyer_id INT UNSIGNED DEFAULT NULL,
+  buyer_rating tinyint(4) DEFAULT NULL,
+  buyer_comment varchar(512) DEFAULT NULL,
+  time_of_arrival datetime DEFAULT NULL
+); 
+
+CREATE TABLE product (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name varchar(32) DEFAULT NULL,
+  date_of_manifacture date DEFAULT NULL,
+  shelf_life int(10) UNSIGNED DEFAULT NULL,
+  composition varchar(32) DEFAULT NULL,
+  storage_temp smallint(6) DEFAULT NULL,
+  place_of_origin varchar(32) DEFAULT NULL,
+  manufacturer varchar(32) DEFAULT NULL,
+  importer varchar(32) DEFAULT NULL,
+  product_type INT UNSIGNED DEFAULT NULL
+); 
+
+CREATE TABLE product_type (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_type_name varchar(32) DEFAULT NULL
+); 
+
+CREATE TABLE shopping_cart (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL,
+  buyer_id INT UNSIGNED DEFAULT NULL,
+  order_id INT UNSIGNED DEFAULT NULL,
+  order_time DATETIME NOT NULL DEFAULT current_timestamp()
+); 
+
+CREATE TABLE supplier (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  suppliers_name varchar(32) DEFAULT NULL
+); 
+
+CREATE TABLE tobacco (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  product_id INT UNSIGNED DEFAULT NULL,
+  cigarete_per_piece tinyint(1) DEFAULT NULL,
+  box tinyint(1) DEFAULT NULL,
+  dry_tobacco tinyint(1) DEFAULT NULL,
+  nicotine decimal(2,1) DEFAULT NULL,
+  tar tinyint(4) DEFAULT NULL,
+  carbon_monoxide tinyint(4) DEFAULT NULL
+);

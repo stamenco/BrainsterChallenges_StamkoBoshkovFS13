@@ -1,0 +1,43 @@
+ALTER TABLE confectionery
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE cosmetics
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE drinks
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE foods
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE household_items
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE milk_and_dairy
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE modify_add_delete
+  	ADD CONSTRAINT FOREIGN KEY (admin_id) REFERENCES administrator (id),
+  	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+ALTER TABLE orders
+	ADD CONSTRAINT FOREIGN KEY (admin_id) REFERENCES administrator (id),
+    	ADD CONSTRAINT FOREIGN KEY (supplier_id) REFERENCES supplier (id);
+
+ALTER TABLE orders_completed
+	ADD CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders (id),
+    	ADD CONSTRAINT FOREIGN KEY (supplier_id) REFERENCES supplier (id),
+    	ADD CONSTRAINT FOREIGN KEY (buyer_id) REFERENCES buyer (id);
+
+ALTER TABLE product
+	ADD CONSTRAINT FOREIGN KEY (product_type) REFERENCES product_type (id);
+
+ALTER TABLE shopping_cart
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id),
+    	ADD CONSTRAINT FOREIGN KEY (buyer_id) REFERENCES buyer (id),
+    	ADD CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders (id);
+
+ALTER TABLE tobacco
+	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES product (id);
+
+
