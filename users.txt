@@ -1,6 +1,1 @@
-stamenco@gmail.com,stamenco=$2y$10$05yR09AGY.uTN3onNqE6bOk0/iqT5BVrA3Q/c7siGSKQK13Q1hvCy
-marijapetkova@icloud.com,epinki=$2y$10$05yR09AGY.uTN3onNqE6bOk0/iqT5BVrA3Q/c7siGSKQK13Q1hvCy
-portarskitransport@gmail.com,stameto=$2y$10$26xyZUuY2xtDs7MUl4HUNuX120gvtsKe91x5CgZMWOt.UgGQaNRbO
-stamkoboskov@gmail.com,admin=$2y$10$lMzZWvbV3aJonh8ZkeiGhu8mfdPEGkO2VryxdrTtyO1nCmamm/bCu
-stamencooo@gmail.com,admin321=$2y$10$j6lgzJ2xQm/qkIgnoFxwcOnhkreaY5iOI5M9e3iOm4Z.VjeWqyQPy
-stamenco0000@gmail.com,stamencoooo=$2y$10$INoWV0AEyZ3HuetWmyNID.eCCuaxRk1T0fcEXkJaIPpBD.uNtspYK
+lepataseva@gmail.com,epinki=$2y$10$9./8SDYjj5Y3VMt2S5.LG.ckEXCfGcrXbwwWwubmKeRqoR/Po7Nly

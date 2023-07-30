@@ -52,11 +52,28 @@ function userRegistration(string $username, string $password, string $email): st
     $userPassword = '';
 
     foreach ($users as $user) {
+        // $explodeByComma[] = explode(',', $user);
         $explodeByComma = explode(',', $user);
         $userEmail = $explodeByComma[0];
-        $userPass = explode("=", $explodeByComma[1]);
-        $userUsername = $userPass[0];
-        $userPassword = $userPass[1];
+
+        // foreach ($explodeByComma[1] as $userCredentials) {
+        //     $userPass = explode("=", $userCredentials);
+        //     $userUsername = $userPass[0];
+        //     $userPassword = $userPass[1];
+        // }
+
+        if (isset($explodeByComma[1])) {
+            $userPass = explode("=", $explodeByComma[1]);
+            $userUsername = $userPass[0];
+            $userPassword = $userPass[1];
+        }
+
+
+        // $userPass = explode("=", $explodeByComma[1]);
+
+        // $userUsername = $userPass[0];
+        // $userPassword = $userPass[1];
+
 
         if ($username === $userUsername) {
             $flagUsername = true;
@@ -92,9 +109,18 @@ function checkLogin($username, $password): string
 
     foreach ($users as $user) {
         $explodeByComma = explode(',', $user);
-        $userPass = explode("=", $explodeByComma[1]);
-        $userUsername = $userPass[0];
-        $userPassword = $userPass[1];
+
+        // foreach ($explodeByComma[1] as $userCredentials) {
+        //     $userPass = explode("=", $userCredentials);
+        //     $userUsername = $userPass[0];
+        //     $userPassword = $userPass[1];
+        // }
+
+        if (isset($explodeByComma[1])) {
+            $userPass = explode("=", $explodeByComma[1]);
+            $userUsername = $userPass[0];
+            $userPassword = $userPass[1];
+        }
 
         if ($username === $userUsername && password_verify($password, $userPassword)) {
             return header("Location: dashboard.php?user={$username}");
