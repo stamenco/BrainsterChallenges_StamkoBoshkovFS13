@@ -1,0 +1,35 @@
+.background-img-1 {
+  background-image: url("../img/background.jpg");
+}
+
+.background-img-2 {
+  background-image: url("../img/background2.jpg");
+}
+
+.custom-background {
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.custom-button {
+  width: fit-content !important;
+  backdrop-filter: blur(5px);
+}
+
+.custom-shadow {
+  text-shadow: 0 0 6px rgb(0, 0, 0);
+}
+
+.custom-shadow2 {
+  text-shadow: 0px 2px 15px rgb(255, 255, 255);
+}
+
+.form-bg {
+  backdrop-filter: blur(5px);
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.6)
+  );
+}
