@@ -1,0 +1,56 @@
+body {
+    background: url(../img/texture.jpg);
+    background-color: rgb(151, 92, 81);
+    background-blend-mode: multiply;
+}
+
+.navbar {
+    background-color: rgb(51, 0, 0);
+}
+.navbar li a {
+    color: white;
+}
+
+.navbar li a:hover {
+    color: goldenrod;
+}
+
+.content {
+    height: 650px;
+    position: relative;
+}
+
+#cafeImg {
+    position: absolute;
+    height: 550px;
+    width: 760px;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+}
+
+.card {
+    display: block;
+    background-color: rgb(255, 255, 255, 0.7);
+    width: 47%;
+    top: 30%;
+}
+
+.buttonVisit {
+    width: 150px;
+    margin-bottom: -20px;
+    color: white;
+}
+
+footer {
+    background-color: rgb(51, 0, 0);
+}
+
+.wrapper2 {
+    background-color: rgb(205, 152, 18);
+}
+
+.content2 {
+    background-color: bisque;
+    outline: double 10px bisque;
+}
